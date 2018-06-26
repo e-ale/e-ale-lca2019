@@ -1,0 +1,51 @@
+\section{sudo}
+\begin{frame}
+   {sudo and root Privilege}
+
+   \begin{itemize}
+      \item
+      Some tasks require \textbf{root} (administrator)
+      privilege, including:
+      \begin{itemize}
+         \item
+         Changes to system configuration that affect all users
+         \item
+         Installing new software for all users
+         \item
+         Accessing certain hardware, such as when
+         \textbf{mounting} hard disk partitions
+      \end{itemize}
+      \item
+      Can become root user through use of \textbf{su} command,
+      but this requires knowing the root password
+      \item
+      Better to use \textbf{sudo} because:
+      \begin{itemize}
+         \item
+         Requires only normal user password
+         \item
+         Privileges can be restricted to only those strictly
+         necessary
+         \item
+         Better logging on the system of such activities
+      \end{itemize}
+      \item
+      Will do a laboratory exercise to ensure your system is
+      properly set up to use \textbf{sudo}
+   \end{itemize}
+
+
+\end{frame}
+
+\cprotect\note{
+
+   We will discuss how to set up and use \textbf{sudo} in detail
+   in the lab exercise.
+
+   Note that some distributions already set it up at
+   install time (e.g., \textbf{Ubuntu}) and others offer it
+   as an option to set up at that time (.e.g.,
+   \textbf{Fedora}, \textbf{openSUSE}, etc.)
+
+}
+
