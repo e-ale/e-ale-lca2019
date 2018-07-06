@@ -15,6 +15,6 @@ However to make your own set of slides do the following:
 * mv c-ale-slide-template my-talk
 * cd my-talk
 * mv c-ale-slide-template.tex my-talk.tex
-* sed -i 's/c-ale-slide-template/my-talk.tex/g' my-talk.tex
+* sed -i 's/c-ale-slide-template/my-talk/g' my-talk.tex
 * make veryclean slides
 * evince my-talk-SLIDES.pdf
