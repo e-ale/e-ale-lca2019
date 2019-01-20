@@ -1,0 +1,18 @@
+\begin{frame}
+   {Configure Raspian from Host OS}
+   \begin{itemize}
+      \item Add the following to the end of \verb?boot/config.txt?
+         \begin{raw}
+dtoverlay=dwc2
+enable_uart=1
+         \end{raw}
+      \item This will allow us to setup our board over a USB cable
+   \end{itemize}
+\end{frame}
+
+\cprotect\note{
+
+   You can learn more about the \textbf{Raspbian} at \url{https://www.raspbian.org}
+
+}
+
