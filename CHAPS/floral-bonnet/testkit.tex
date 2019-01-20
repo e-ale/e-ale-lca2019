@@ -1,0 +1,22 @@
+\begin{frame}
+   {Now we test the peripherals}
+
+   \begin{itemize}
+      \item Copy \verb?testkit.tar.xz? over to the rpi
+      \begin{raw}
+host$ rsync -aP testkit.tar.xz pi@169.254.12.238:~/
+host$ ssh pi@169.254.12.238
+pi@raspberrypi:~ $ tar xvf testkit.tar.xz 
+pi@raspberrypi:~ $ ls testkit
+BME280  RGBLed.py  TSL2561  button.py  commands.txt
+:luma.examples  py-rpi-ssd1306
+      \end{raw}
+
+   \end{itemize}
+\end{frame}
+
+\cprotect\note{
+
+
+}
+

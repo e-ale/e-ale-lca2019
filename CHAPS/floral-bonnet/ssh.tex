@@ -1,0 +1,28 @@
+\begin{frame}
+   {Now connect with ssh}
+
+   \begin{itemize}
+      \item Get your rpi IP address
+      \begin{raw}
+pi@raspberrypi:~$ ifconfig usb0
+usb0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+inet 169.254.12.238  netmask 255.255.0.0  broadcast 169.254.255.255
+      \end{raw}
+      \item With the RNDIS device configured with a link-local address on your host
+	      you can now ssh to the target
+      \begin{raw}
+host$ ifconfig ens160u4u1
+ens160u4u1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+inet 169.254.42.138  netmask 255.255.0.0  broadcast 169.254.255.255
+host$ ssh pi@169.254.12.238
+pi@169.254.12.238's password: *******
+      \end{raw}
+
+   \end{itemize}
+\end{frame}
+
+\cprotect\note{
+
+
+}
+

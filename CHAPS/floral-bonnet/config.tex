@@ -1,18 +1,39 @@
 \begin{frame}
    {Configure Raspian from Host OS}
    \begin{itemize}
+      \item We need to make some changes to be able to setup Raspbian headless
+	      over the USB cables (without a monitor and keyboard)
+      \item With your uSD card still in the SD card reader...
+      \item Use your favourite text editor to modify the following 2 files on the SD card
       \item Add the following to the end of \verb?boot/config.txt?
          \begin{raw}
 dtoverlay=dwc2
 enable_uart=1
          \end{raw}
-      \item This will allow us to setup our board over a USB cable
+      \item Add the following after \verb?rootwait? in \verb?boot/cmdline.txt?
+         \begin{raw}
+rootwait modules-load=dwc2,g_ether
+         \end{raw}
+      \item (it needs to be immediately after \verb?rootwait? before anything else)
+      \item We also need to start ssh by creating \verb?boot/ssh?
+         \begin{raw}
+$ touch /media/$USER/boot/ssh
+         \end{raw}
    \end{itemize}
 \end{frame}
 
 \cprotect\note{
 
-   You can learn more about the \textbf{Raspbian} at \url{https://www.raspbian.org}
+   We can make the changes above in many ways, but to do it from the command line we
+   can do something like this:
+   \begin{raw}
+$ echo "dtoverlay=dwc2" >> /media/$USER/boot/config.txt
+$ echo "enable_uart=1" >> /media/$USER/boot/config.txt
+$ sed -ie 's/rootwait/rootwait modules-load=dwc2,g_ether/' /media/$USER/boot/cmdline.txt
+$ touch /media/$USER/boot/ssh
+$ sync
+$ umount /media/$USER/*oot*
+   \end{raw}
 
 }
 
