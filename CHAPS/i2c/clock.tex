@@ -1,0 +1,19 @@
+\begin{frame}
+   {I2C clock}
+   \begin{itemize}
+      \item The I2C master tends to drive the clock line, however an I2C slave can
+	      hold the SCL line low telling the master to wait in a process
+	   which is called \verb?clock stretching?
+      \item The SDA line is driven by whomever is currently talking at any
+	      particular moment
+      \item There are many other details of the I2C protocol which you can read up
+	      in the specification or (more easily) on the Wikipedia page
+   \end{itemize}
+\end{frame}
+
+\cprotect\note{
+
+   I2C Wikipedia page: \url{https://en.wikipedia.org/wiki/I\%C2\%B2C}
+
+}
+

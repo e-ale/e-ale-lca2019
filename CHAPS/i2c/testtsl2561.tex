@@ -1,0 +1,22 @@
+\begin{frame}
+   {Running the TSL2561 over I2C}
+
+   \begin{raw}
+pi@raspberrypi:~$ cd src/testkit/TSL2561/Python/
+pi@raspberrypi:~/src/testkit/TSL2561/Python$ python TSL2561.py 
+Full Spectrum(IR + Visible) :108 lux
+Infrared Value :16 lux
+Visible Value :92 lux
+pi@raspberrypi:~/src/testkit/TSL2561/Python$ watch -n 1 python TSL2561.py 
+   \end{raw}
+   \begin{itemize}
+      \item Try covering the TSL2651 with your hand and watch the values fall
+      \item Shine a light on the TSL2651 and watch the values rise
+   \end{itemize}
+\end{frame}
+
+\cprotect\note{
+
+
+}
+

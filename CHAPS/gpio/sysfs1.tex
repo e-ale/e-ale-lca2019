@@ -1,0 +1,18 @@
+\begin{frame}
+   {Using the sysfs gpio interface for input}
+   \begin{raw}
+# Set up GPIO 7 and set to input
+echo "7" > /sys/class/gpio/export
+echo "in" > /sys/class/gpio/gpio7/direction
+# Read from input
+cat /sys/class/gpio/gpio7/value
+# Clean up
+echo "7" > /sys/class/gpio/unexport
+   \end{raw}
+\end{frame}
+
+\cprotect\note{
+
+
+}
+

@@ -1,0 +1,26 @@
+\begin{frame}
+   {libgpiod}
+   \begin{itemize}
+      \item The libgpiod library and set of tools is now the official way
+	      of dealing with gpios.
+      \begin{raw}
+pi@raspberrypi:~$ gpiodetect 
+gpiochip0 [pinctrl-bcm2835] (54 lines)
+pi@raspberrypi:~$ gpioinfo 
+gpiochip0 - 54 lines:
+        line   0:      unnamed       unused   input  active-high
+        line   1:      unnamed       unused   input  active-high
+        line   2:      unnamed       unused   input  active-high
+...
+        line  46:      unnamed       unused   input  active-high
+        line  47:      unnamed       "led0"  output  active-high [used]
+...
+      \end{raw}
+   \end{itemize}
+\end{frame}
+
+\cprotect\note{
+
+
+}
+

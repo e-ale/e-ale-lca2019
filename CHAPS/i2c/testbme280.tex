@@ -1,0 +1,23 @@
+\begin{frame}
+   {Running the BME280 over I2C}
+
+   \begin{raw}
+pi@raspberrypi:~$ cd testkit/BME280/Python/
+pi@raspberrypi:~/testkit/BME280/Python$ python BME280.py 
+Temperature in Celsius : 24.27 C
+Temperature in Fahrenheit : 75.69 F
+Pressure : 1006.74 hPa 
+Relative Humidity : 49.45 %
+pi@raspberrypi:~/testkit/BME280/Python$ watch -n 1 python BME280.py 
+   \end{raw}
+   \begin{itemize}
+      \item Try putting your finger on the BME280 and watch the temperature rise
+      \item Blow on the BME280 and watch the temperature fall
+   \end{itemize}
+\end{frame}
+
+\cprotect\note{
+
+
+}
+
