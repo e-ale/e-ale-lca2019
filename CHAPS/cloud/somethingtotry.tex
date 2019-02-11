@@ -1,0 +1,25 @@
+\begin{frame}
+	{Now lets talk about something to try}
+
+	\begin{itemize}
+		\item MQTT - Mosquitto, MQTT broker, good for local passing of data
+		\item Think of it as a message bus on the network
+		\item Clients Subscribe to Topics that can be hierarchical, and listen to the Topic
+		\begin{itemize}
+			\item /myhome/groundfloor/livingroom/temperature for example
+			\item You can listen at any level of the hierarchy, anything below your level will be filtered to you
+			\item Wildcards, +, are allowed /myhome/+/temperature
+		\end{itemize}
+		\item Devices Publish data to topics
+		\begin{itemize}
+			\item The data is freeform, the receiving end is expected to interpret it
+		\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+\cprotect\note{
+	% Speaker notes go here
+}
+
+% vim:colorcolumn=80:display+=lastline:linebreak:wrap:tw=80:tabstop=4:shiftwidth=4

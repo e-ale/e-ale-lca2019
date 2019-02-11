@@ -1,0 +1,55 @@
+\begin{frame}
+	{Next Up, adding the Raspberry Pi}
+
+	\begin{multicols}{2}
+		\textbf{Server Side:}
+		\begin{itemize}
+			\item MQTT server
+			\begin{itemize}
+				\item Mosquitto
+				\item Default config w/ username/password set
+			\end{itemize}
+		\end{itemize}
+
+		\vfill\null
+		\columnbreak
+
+		\textbf{Client Side}
+		\begin{itemize}
+			\item \begin{raw}[fontsize=\small]
+apt-get install mosquitto mosquitto-clients
+\end{raw}
+			\item {\small On your laptop / VM / not the Raspberry Pi}
+			\begin{itemize}
+				\item \begin{raw}[fontsize=\small]
+mosquitto_sub \
+	-h 10.111.0.5 \
+	-t “topic_name” \
+	-u "ale" \
+	-P "Penguins"
+\end{raw}
+			\end{itemize}
+			\item {\small On the Raspberry Pi}
+			\begin{itemize}
+				\item \begin{raw}[fontsize=\small]
+while [[ 1 ]];do \
+	mosquitto_pub \
+	-h 10.111.0.5 \
+	-t “topic_name” \
+	-m "hello world" \
+	-u "ale" \
+	 -P "Penguins"; \
+	sleep 10;\
+done
+\end{raw}
+			\end{itemize}
+		\end{itemize}
+	\end{multicols}
+
+\end{frame}
+
+\cprotect\note{
+	% Speaker notes go here
+}
+
+% vim:colorcolumn=80:display+=lastline:linebreak:wrap:tw=80:tabstop=4:shiftwidth=4

@@ -1,0 +1,58 @@
+\begin{frame}
+	{Lets just try listening...}
+
+	\begin{multicols}{2}
+\textbf{On your laptop/VM:}
+
+\begin{itemize}
+	\item yum install mosquitto
+	\item apt-get install mosquitto-clients
+\end{itemize}
+
+\textit{then}
+
+\begin{raw}[fontsize=\small]
+mosquitto_sub \
+	-h 10.111.0.5 \
+	-t “pugnose/temp/core0” \
+	-u "ale" \
+	-P "Penguins"
+\end{raw}
+Expected output:
+
+\begin{raw}[fontsize=\small]
+	+67.0°C
+\end{raw}
+
+
+		\vfill\null
+		\columnbreak
+
+\textbf{What’s running on “pugnose”:}
+
+\begin{raw}[fontsize=\small]
+while [[ 1 ]];do \
+	mosquitto_pub \
+		-h 10.111.0.5 \
+		-t “pugnose/temp/core0” \
+		-m "$( \
+			sensors | \
+			grep "Core 0" | \
+			tr " " "\n" | \
+			grep "°" | \
+			head -n 1 \
+		)" \
+		-u "ale" \
+		-P "Penguins"; \
+		sleep 10;\
+done
+\end{raw}
+	\end{multicols}
+
+\end{frame}
+
+\cprotect\note{
+	% Speaker notes go here
+}
+
+% vim:colorcolumn=80:display+=lastline:linebreak:wrap:tw=80:tabstop=4:shiftwidth=4
