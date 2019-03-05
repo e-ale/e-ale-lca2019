@@ -1,0 +1,45 @@
+\begin{frame}
+	{What this is doing:}
+
+	The MQTT broker is passing published messages (mosquitto\_pub) to
+	subscribed (mosquitto\_sub) clients.
+
+	\begin{multicols}{2}
+		\begin{raw}[fontsize=\small]
+mosquitto_sub \ <---------- The Command
+	-h 10.111.0.5 \ <-- The (-h)ost
+	-t “topic_name” \ <-- The (-t)opic
+	-u "ale" \ <------- The (-u)sername 
+	-P "Penguins" <---- The (-P)assword
+		\end{raw}
+		Output:
+		\begin{raw}[fontsize=\small]
+hello world
+\end{raw}
+
+
+		\vfill\null
+		\columnbreak
+
+		\begin{raw}[fontsize=\small]
+mosquitto_pub \ <------------- The Command
+	-h 10.111.0.5 \ <----- The (-h)ost
+	-t “topic_name” \ <----- The (-t)opic
+	-m "hello world" \ <-- The (-m)essage
+	-u "ale" \ <---------- The (-u)sername
+	-P "Penguins" <------- The (-P)assword
+\end{raw}
+		Output:
+		\begin{raw}[fontsize=\small]
+<none unless error>
+\end{raw}
+
+	\end{multicols}
+
+\end{frame}
+
+\cprotect\note{
+	% Speaker notes go here
+}
+
+% vim:colorcolumn=80:display+=lastline:linebreak:wrap:tw=80:tabstop=4:shiftwidth=4
